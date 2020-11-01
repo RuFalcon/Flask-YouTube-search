@@ -5,6 +5,7 @@ import random
 
 main = Blueprint('main', __name__)
 
+
 @main.route('/', methods=['GET', 'POST'])
 def index():
     search_url = 'https://www.googleapis.com/youtube/v3/search'
@@ -44,7 +45,6 @@ def index():
 
         results = r.json()['items']
 
-        
         for result in results:
             video_data = {
                 'id': result['id'],
